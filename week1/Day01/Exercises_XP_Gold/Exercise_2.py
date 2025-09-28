@@ -4,7 +4,7 @@ for i in range(1,21):
 print()
 print()
 #print out every element which has an even index.
-for i in range(1,21):
-    if (i % 2 == 0) :
-        print(i)
+new_nbr_list = list(range(1,21))
+for i in range(0,len(new_nbr_list),2) :
+    print(new_nbr_list[i],end=" ")
 
