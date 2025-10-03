@@ -9,5 +9,7 @@ sample_dict = {
       }
    }
 }
+# sample_dict["class"]["student"]["marks"]["history"] = 90
 history_value = sample_dict["class"]["student"]["marks"]["history"]
 print(history_value)
+print(sample_dict.keys())
