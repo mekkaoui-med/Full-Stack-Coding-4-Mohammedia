@@ -1,8 +1,8 @@
-def calculation(a,b):
-    add = f'the addition of {a} and {b} is : a + b =  {a+b} '
-    subt = f'the subtraction of {a} and {b} is :a - b = {a - b}'
-    return add,subt
-add, subt= calculation(40, 10)
+def check_arguments_keywordedarguments (required_arg, *args, **kwargs):
+    print(required_arg)
+    if args:
+        print(args)
+    if kwargs:
+        print(kwargs)
 
-print(add)
-print(subt)
+check_arguments_keywordedarguments("Hello", 10, 20, name="Ali", age=25)
