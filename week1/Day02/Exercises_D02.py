@@ -211,7 +211,7 @@ def ask_questions(data):
         user_answer = input("Your answer: ").strip()
 
         if user_answer.lower() == item["answer"].lower():
-            print("✅ Correct!")
+            print("Correct!")
             correct += 1
         else:
             print(f"Wrong! The correct answer was: {item['answer']}")
@@ -231,7 +231,7 @@ def show_results(correct, incorrect, wrong_answers):
     print(f"Incorrect answers: {incorrect}")
 
     if wrong_answers:
-        print("\n🧠 You got these wrong:")
+        print("\nYou got these wrong:")
         for w in wrong_answers:
             print(f"\nQuestion: {w['question']}")
             print(f"Your answer: {w['your_answer']}")
