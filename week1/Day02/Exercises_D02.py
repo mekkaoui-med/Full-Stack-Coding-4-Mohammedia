@@ -187,3 +187,68 @@ def main():
         
 
 main()
+
+#Ex08 : 
+# Star Wars Quiz
+
+data = [
+    {"question": "What is Baby Yoda's real name?", "answer": "Grogu"},
+    {"question": "Where did Obi-Wan take Luke after his birth?", "answer": "Tatooine"},
+    {"question": "What year did the first Star Wars movie come out?", "answer": "1977"},
+    {"question": "Who built C-3PO?", "answer": "Anakin Skywalker"},
+    {"question": "Anakin Skywalker grew up to be who?", "answer": "Darth Vader"},
+    {"question": "What species is Chewbacca?", "answer": "Wookiee"}
+]
+
+
+def ask_questions(data):
+    correct = 0
+    incorrect = 0
+    wrong_answers = []
+
+    for item in data:
+        print("\n" + item["question"])
+        user_answer = input("Your answer: ").strip()
+
+        if user_answer.lower() == item["answer"].lower():
+            print("✅ Correct!")
+            correct += 1
+        else:
+            print(f"Wrong! The correct answer was: {item['answer']}")
+            incorrect += 1
+            wrong_answers.append({
+                "question": item["question"],
+                "your_answer": user_answer,
+                "correct_answer": item["answer"]
+            })
+
+    return correct, incorrect, wrong_answers
+
+
+def show_results(correct, incorrect, wrong_answers):
+    print("\n--- Quiz Results ---")
+    print(f"Correct answers: {correct}")
+    print(f"Incorrect answers: {incorrect}")
+
+    if wrong_answers:
+        print("\n🧠 You got these wrong:")
+        for w in wrong_answers:
+            print(f"\nQuestion: {w['question']}")
+            print(f"Your answer: {w['your_answer']}")
+            print(f"Correct answer: {w['correct_answer']}")
+
+    if incorrect > 3:
+        play_again = input("\nYou had more than 3 wrong answers . Would you like to play again? (yes/no): ").lower()
+        if play_again == "yes":
+            print("\nLet's try again!\n")
+            main()
+        else:
+            print("Thanks for playing! May the Force be with you ")
+
+
+def main():
+    correct, incorrect, wrong_answers = ask_questions(data)
+    show_results(correct, incorrect, wrong_answers)
+
+
+main()
