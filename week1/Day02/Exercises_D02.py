@@ -145,12 +145,6 @@ make_shirt("medium","Hi it's me")
 
 #Ex07 :
 
-def make_shirt(size = "Large",text = "I love Python"):
-    print(f"the size of the shirt is {size} and the text is '{text} '")
-make_shirt("large","hello world")
-make_shirt()
-make_shirt("Small","One code , code One ")
-make_shirt("medium","Hi it's me")
 import random
 def get_random_temp(season):
     match season :
@@ -303,7 +297,7 @@ if user_input in birthdays:
     print(f"{user_input}'s birthday is {birthdays[user_input]}.")
 else:
     print(f"Sorry, we don’t have the birthday information for {user_input}.")
-    
+
 #Ex03 : 
 
 def sum(x):
@@ -312,3 +306,5 @@ def sum(x):
     return total
 
 #Ex04 : 
+import random
+def throw_dice():
