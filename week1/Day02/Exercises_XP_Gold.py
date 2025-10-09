@@ -54,3 +54,34 @@ def sum(x):
     total = int(x_str) + int(x_str * 2) + int(x_str * 3) + int(x_str * 4)
     return total
 
+#Ex04: 
+
+import random
+
+def throw_dice():
+    return random.randint(1, 6)
+
+def throw_until_doubles():
+    count = 0
+    while True:
+        count += 1
+        dice1 = throw_dice()
+        dice2 = throw_dice()
+        if dice1 == dice2:
+            break
+    return count
+
+def main():
+    results = []  
+
+    for _ in range(100):
+        throws = throw_until_doubles()
+        results.append(throws)
+
+    total_throws = sum(results)
+    average_throws = total_throws / len(results)
+
+    print(f"Total throws: {total_throws}")
+    print(f"Average throws to reach doubles: {average_throws:.2f}")
+
+main()
