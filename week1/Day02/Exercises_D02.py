@@ -303,7 +303,9 @@ if user_input in birthdays:
     print(f"{user_input}'s birthday is {birthdays[user_input]}.")
 else:
     print(f"Sorry, we don’t have the birthday information for {user_input}.")
+    
 #Ex03 : 
+
 def sum(x):
     x_str = str(x)
     total = int(x_str) + int(x_str * 2) + int(x_str * 3) + int(x_str * 4)
