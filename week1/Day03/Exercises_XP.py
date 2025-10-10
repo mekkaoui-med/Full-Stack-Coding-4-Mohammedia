@@ -36,3 +36,30 @@ print(f"the dog hieght is : {davids_dog.height} cmm ")
 
 davids_dog.bark()
 davids_dog.jump()
+
+sarahs_dog = Dog("Teacup",20)
+print(f"sarahs_dog name is : {sarahs_dog.name}")
+print(f"sarahs can jump {sarahs_dog.height} cm")
+
+sarahs_dog.bark()
+sarahs_dog.jump()
+
+if sarahs_dog.height < davids_dog.height:
+    print(f"{davids_dog.name} is bigger")
+elif sarahs_dog.height > davids_dog.height:
+    print(f"{sarahs_dog.name} is bigger")
+else :
+    pass
+
+#Ex03 : 
+#
+class Song:
+    def __init__(self,lyrics):
+        self.lyrics = lyrics
+    def sing_me_a_song(self):
+        for line in self.lyrics:
+            print(line)
+stairway= Song(["There’s a lady who's sure","all that glitters is gold", "and she’s buying a stairway to heaven"])
+stairway.sing_me_a_song()
+
+#Ex04
