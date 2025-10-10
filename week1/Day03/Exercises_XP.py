@@ -63,3 +63,50 @@ stairway= Song(["There’s a lady who's sure","all that glitters is gold", "and 
 stairway.sing_me_a_song()
 
 #Ex04
+
+class Zoo:
+    def __init__(self, zoo_name):
+        self.name = zoo_name
+        self.animals = []
+
+    def add_animal(self, new_animal):
+        if new_animal not in self.animals:
+            self.animals.append(new_animal)
+        else:
+            print(f"{new_animal} is already in the zoo!")
+
+    def get_animals(self):
+        print(f"\nAnimals in {self.name}:")
+        for animal in self.animals:
+            print(f"- {animal}")
+
+    def sell_animal(self, animal_sold):
+        if animal_sold not in self.animals:
+            print(f"This animal: {animal_sold} is not in the zoo list.")
+        else:
+            self.animals.remove(animal_sold)
+            print(f"{animal_sold} has been sold.")
+
+    def sort_animals(self):
+        animal_groups = {}
+        for animal in sorted(self.animals):
+            first_letter = animal[0].upper()
+            if first_letter in animal_groups:
+                if isinstance(animal_groups[first_letter], list):
+                     animal_groups[first_letter].append(animal)
+                else:
+                     animal_groups[first_letter] = [animal_groups[first_letter], animal]
+            else:
+                    animal_groups[first_letter] = animal
+        return animal_groups
+
+    def get_groups(self):
+        grouped = self.sort_animals()
+        print("\nAnimal groups by first letter:")
+        for letter, animals in grouped.items():
+            if isinstance(animals, list):
+                print(f"{letter}: {', '.join(animals)}")
+            else:
+                print(f"{letter}: {animals}")
+
+
