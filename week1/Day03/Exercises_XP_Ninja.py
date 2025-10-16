@@ -46,18 +46,18 @@ class Phone:
                 print(f"'{msg['content']}'")
 
 
-# phone1 = Phone("065098767")
-# phone2 = Phone("098789879")
+phone1 = Phone("065098767")
+phone2 = Phone("098789879")
 
-# phone1.call(phone2)
-# phone2.send_message(phone1, "cc cv ?")
-# phone1.send_message(phone2, "oui, merci")
+phone1.call(phone2)
+phone2.send_message(phone1, "cc cv ?")
+phone1.send_message(phone2, "oui, merci")
 
-# phone1.show_call_history()
-# phone2.show_call_history()
+phone1.show_call_history()
+phone2.show_call_history()
 
 
-# phone1.show_outgoing_messages()
-# phone1.show_incoming_messages()
+phone1.show_outgoing_messages()
+phone1.show_incoming_messages()
 
-# phone1.show_messages_from(phone2)
+phone1.show_messages_from(phone2)
